@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreeShakti Money - Financial Empowerment for Women</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500&display=swap">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            background: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            border-color: #7c4dff;
+        }
+
+        .lang-btn.active {
+            background: #7c4dff;
+            color: white;
+            border-color: #7c4dff;
+        }
+
+        .lang-btn img {
+            width: 20px;
+            height: 15px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #7c4dff;
+        }
+
+        .logo i {
+            font-size: 28px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: #f0e6ff;
+            color: #7c4dff;
+        }
+
+        .nav-link i {
+            font-size: 18px;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+        }
+
+        .user-profile i {
+            font-size: 24px;
+            color: #7c4dff;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(124, 77, 255, 0.1);
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7c4dff 0%, #5e35b1 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(124, 77, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #7c4dff;
+            border: 2px solid #7c4dff;
+        }
+
+        .btn-secondary:hover {
+            background: #f0e6ff;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Features Section - UPDATED */
+        .features-section {
+            padding: 60px 20px;
+            background: white;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .features-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9ff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #e6e9ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(124, 77, 255, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #7c4dff 0%, #9c7bff 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .feature-icon i {
+            font-size: 30px;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #333;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .feature-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e6e9ff;
+            width: 100%;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #7c4dff;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Speaker Assistant - UPDATED */
+        .speaker-assistant {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        .speaker-btn {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .speaker-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
+        }
+
+        .speaker-btn.active {
+            background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+        }
+
+        .speaker-btn.active i {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .speaker-instruction {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-size: 14px;
+            display: none;
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            min-width: 250px;
+        }
+
+        .speaker-assistant:hover .speaker-instruction {
+            display: block;
+        }
+
+        /* Speaker Panel */
+        .speaker-panel {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            padding: 15px;
+            display: none;
+            z-index: 101;
+            min-width: 250px;
+        }
+
+        .speaker-panel.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .speaker-option {
+            padding: 12px 15px;
+            background: #f8f9ff;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .speaker-option:hover {
+            background: #7c4dff;
+            color: white;
+        }
+
+        .speaker-option i {
+            width: 20px;
+        }
+
+        .speed-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            justify-content: space-between;
+        }
+
+        .speed-control span {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .speed-btn {
+            padding: 5px 10px;
+            background: #e0e0e0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .speed-btn:hover {
+            background: #7c4dff;
+            color: white;
+        }
+
+        .speed-btn.active {
+            background: #7c4dff;
+            color: white;
+        }
+
+        /* Speech Status */
+        .speech-status {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            background: #7c4dff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            display: none;
+            z-index: 102;
+        }
+
+        .speech-status.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Listen Button on Feature Cards */
+        .listen-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 35px;
+            height: 35px;
+            background: #4CAF50;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .feature-card:hover .listen-btn {
+            opacity: 1;
+        }
+
+        .listen-btn:hover {
+            background: #2E7D32;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: white;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top: 2px solid #f0e6ff;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .footer-section p {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .language-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .lang-badge {
+            background: #f0e6ff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .safety-btn {
+            padding: 10px 20px;
+            background: #ffebee;
+            color: #d32f2f;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .safety-btn:hover {
+            background: #ffcdd2;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        
+            .language-switcher {
+                flex-wrap: wrap;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                padding: 15px 20px;
+            }
+            
+            .speaker-panel {
+                bottom: 100px;
+                right: 20px;
+                left: 20px;
+                min-width: auto;
+            }
+            
+            .speaker-instruction {
+                display: none !important;
+            }
+            
+            .speech-status {
+                bottom: 90px;
+                right: 20px;
+                left: 20px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .features-section h2, .actions-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            .speaker-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">
+            <i class="fas fa-globe"></i> English
+        </button>
+        <button class="lang-btn" data-lang="hi">
+            <i class="fas fa-globe"></i> हिन्दी
+        </button>
+        <button class="lang-btn" data-lang="te">
+            <i class="fas fa-globe"></i> తెలుగు
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-female"></i>
+            <span data-key="app_name">StreeShakti Money</span>
+        </div>
+        <div class="nav-menu">
+            <a href="shakthi.html" class="nav-link active" data-key="nav_home">
+                <i class="fas fa-home"></i> <span class="nav-text">Home</span>
+            </a>
+            <a href="savings.html" class="nav-link" data-key="nav_savings">
+                <i class="fas fa-piggy-bank"></i> <span class="nav-text">Savings</span>
+            </a>
+            <a href="learning.html" class="nav-link" data-key="nav_learn">
+                <i class="fas fa-graduation-cap"></i> <span class="nav-text">Learn</span>
+            </a>
+            <a href="business.html" class="nav-link" data-key="nav_business">
+                <i class="fas fa-briefcase"></i> <span class="nav-text">Business</span>
+            </a>
+            <a href="safety.html" class="nav-link" data-key="nav_safety">
+                <i class="fas fa-shield-alt"></i> <span class="nav-text">Safety</span>
+            </a>
+        </div>
+        <div class="user-profile">
+            <i class="fas fa-user-circle"></i>
+            <span data-key="welcome"> </span>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero-section" id="home">
+            <div class="hero-content">
+                <h1 data-key="hero_title">Your Financial Freedom, In Your Language</h1>
+                <p data-key="hero_subtitle">Banking, investments, loans & financial education tailored for women in Hindi, Tamil, Telugu & English</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="readSection('home')">
+                        <i class="fas fa-volume-up"></i>
+                        <span data-key="btn_listen">Listen to This Section</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Using Font Awesome icon as placeholder - replace with actual image -->
+                <i class="fas fa-wallet" style="font-size: 300px; color: #7c4dff;"></i>
+                <!-- For actual implementation, use: <img src="women-finance.svg" alt="Women managing finances"> -->
+            </div>
+        </section>
+
+        <!-- Features Section - UPDATED -->
+        <section class="features-section" id="features">
+            <h2 data-key="features_title">How We Empower You</h2>
+            
+            <div class="features-grid">
+               
+                <!-- Financial Learning Card -->
+                <div class="feature-card">
+                    <button class="listen-btn" onclick="readFeatureCard(this)">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <a href="learning.html">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3 data-key="feature2_title">Financial Learning</h3>
+                    <p data-key="feature2_desc">Interactive courses in regional languages. Learn budgeting, investing, and financial planning at your pace.</p>
+                    <div class="feature-stats">
+                    </div>
+                    </a>
+                </div>
+
+                <!-- Smart Saving Card -->
+                <div class="feature-card">
+                    <button class="listen-btn" onclick="readFeatureCard(this)">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <a href="details2.html">
+                    <div class="feature-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3 data-key="feature3_title">Smart Savings</h3>
+                    <p data-key="feature3_desc">Automated savings plans with high returns. Set goals and watch your money grow with our smart algorithms.</p>
+                    <div class="feature-stats">
+                    </div>
+                    </a>
+                </div>
+
+                <!-- Business Loan Card -->
+                <div class="feature-card">
+                    <button class="listen-btn" onclick="readFeatureCard(this)">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <a href="business.html">
+                    <div class="feature-icon">
+                         <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 data-key="feature4_title">Business Loans</h3>
+                    <p data-key="feature4_desc">Quick approval loans for women entrepreneurs. Low interest rates and flexible repayment options.</p>
+                    <div class="feature-stats">
+                    </div>
+                    </a>
+                </div>
+
+                <!-- Investment Card -->
+                <div class="feature-card">
+                    <button class="listen-btn" onclick="readFeatureCard(this)">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                    <a href="investment.html">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 data-key="feature5_title">Investment</h3>
+                    <p data-key="feature5_desc">Guided investment options with risk assessment. Start with as little as ₹500 and build your portfolio.</p>
+                    <div class="feature-stats">
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <button class="btn-secondary" onclick="readSection('features')">
+                    <i class="fas fa-headphones"></i>
+                    <span data-key="btn_listen_all">Listen to All Features</span>
+                </button>
+            </div>
+        </section>
+
+
+        
+        <!-- Speaker Assistant -->
+        <div class="speaker-assistant">
+            <div class="speech-status" id="speechStatus"></div>
+            
+            <div class="speaker-panel" id="speakerPanel">
+                <button class="speaker-option" onclick="readPageSummary()">
+                    <i class="fas fa-play"></i>
+                    <span data-key="option_summary">Read Page Summary</span>
+                </button>
+                <button class="speaker-option" onclick="readCurrentSection()">
+                    <i class="fas fa-paragraph"></i>
+                    <span data-key="option_section">Read Current Section</span>
+                </button>
+                <button class="speaker-option" onclick="readAllContent()">
+                    <i class="fas fa-book"></i>
+                    <span data-key="option_all">Read All Content</span>
+                </button>
+                
+                <div class="speed-control">
+                    <span data-key="speed_label">Speed:</span>
+                    <button class="speed-btn" data-speed="0.8" onclick="setSpeechSpeed(0.8)">Slow</button>
+                    <button class="speed-btn active" data-speed="1.0" onclick="setSpeechSpeed(1.0)">Normal</button>
+                    <button class="speed-btn" data-speed="1.2" onclick="setSpeechSpeed(1.2)">Fast</button>
+                </div>
+            </div>
+            
+            <button class="speaker-btn" id="mainSpeakerBtn" onclick="toggleSpeakerPanel()">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            <div class="speaker-instruction" data-key="speaker_instruction">
+                Click to listen to page content. Perfect for those who cannot read.
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-key="footer_contact">Contact Us</h3>
+                <p data-key="footer_helpline">Women Helpline: 1800-XXX-XXXX</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 data-key="footer_languages">Available Languages</h3>
+                <div class="language-badges">
+                    <span class="lang-badge">English</span>
+                    <span class="lang-badge">हिन्दी</span>
+                    <span class="lang-badge">తెలుగు</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Implementation -->
+    <script>
+        // Translations Data - UPDATED with new feature cards
+        const translations = {
+            en: {
+                app_name: "StreeShakti Money",
+                welcome: "Welcome!",
+                nav_home: "Home",
+                nav_savings: "Savings",
+                nav_learn: "Learn",
+                nav_business: "Business",
+                nav_safety: "Safety",
+                hero_title: "Your Financial Freedom, In Your Language",
+                hero_subtitle: "Banking, investments, loans & financial education tailored for women in Hindi, Tamil, Telugu & English",
+                btn_listen: "Listen to This Section",
+                btn_listen_all: "Listen to All Features",
+                btn_get_started: "Get Started Free",
+                btn_watch_demo: "Watch Demo",
+                features_title: "How We Empower You",
+                feature1_title: "User Details & Profile",
+                feature1_desc: "Secure profile management with multilingual support. Update your information in your preferred language.",
+                feature2_title: "Financial Learning",
+                feature2_desc: "Interactive courses in regional languages. Learn budgeting, investing, and financial planning at your pace.",
+                feature3_title: "Smart Savings",
+                feature3_desc: "Automated savings plans with high returns. Set goals and watch your money grow with our smart algorithms.",
+                feature4_title: "Business Loans",
+                feature4_desc: "Quick approval loans for women entrepreneurs. Low interest rates and flexible repayment options.",
+                feature5_title: "Investment",
+                feature5_desc: "Guided investment options with risk assessment. Start with as little as ₹500 and build your portfolio.",
+                stat_complete: "Complete",
+                stat_languages: "Languages",
+                stat_lessons: "Lessons",
+                stat_completion: "Completion",
+                stat_returns: "Returns",
+                stat_avg_savings: "Avg. Savings",
+                stat_max_loan: "Max Loan",
+                stat_interest: "Interest",
+                stat_avg_returns: "Avg Returns",
+                stat_min_invest: "Min Invest",
+                quick_actions: "Quick Actions",
+                action_save: "Save Money",
+                action_invest: "Invest Now",
+                action_loan: "Apply for Loan",
+                action_learn: "Learn Finance",
+                goals_title: "Your Financial Goals",
+                goal1: "Emergency Fund",
+                goal2: "Business Startup",
+                goal3: "Children's Education",
+                saved: "Saved:",
+                speaker_instruction: "Click to listen to page content. Perfect for those who cannot read.",
+                option_summary: "Read Page Summary",
+                option_section: "Read Current Section",
+                option_all: "Read All Content",
+                speed_label: "Speed:",
+                status_reading: "Reading content...",
+                status_stopped: "Stopped",
+                footer_contact: "Contact Us",
+                footer_helpline: "Women Helpline: 1800-XXX-XXXX",
+                footer_email: "Email: support@streeshakti.money",
+                footer_languages: "Available Languages",
+                footer_safety: "Safety First",
+                footer_safety_tip: "Never share your PIN or OTP with anyone",
+                btn_safety_tips: "Safety Tips",
+                footer_copyright: "© 2024 StreeShakti Money. Empowering Women Financially."
+            },
+            hi: {
+                app_name: "स्त्रीशक्ति मनी",
+                welcome: "स्वागत है!",
+                nav_home: "होम",
+                nav_savings: "बचत",
+                nav_learn: "सीखें",
+                nav_business: "व्यवसाय",
+                nav_safety: "सुरक्षा",
+                hero_title: "आपकी वित्तीय स्वतंत्रता, आपकी भाषा में",
+                hero_subtitle: "हिंदी, तमिल, तेलुगु और अंग्रेजी में महिलाओं के लिए बैंकिंग, निवेश, ऋण और वित्तीय शिक्षा",
+                btn_listen: "इस सेक्शन को सुनें",
+                btn_listen_all: "सभी फीचर्स सुनें",
+                btn_get_started: "मुफ्त में शुरू करें",
+                btn_watch_demo: "डेमो देखें",
+                features_title: "हम आपको कैसे सशक्त बनाते हैं",
+                feature1_title: "उपयोगकर्ता विवरण और प्रोफ़ाइल",
+                feature1_desc: "बहुभाषी समर्थन के साथ सुरक्षित प्रोफ़ाइल प्रबंधन। अपनी पसंदीदा भाषा में अपनी जानकारी अपडेट करें।",
+                feature2_title: "वित्तीय शिक्षा",
+                feature2_desc: "क्षेत्रीय भाषाओं में इंटरैक्टिव कोर्स। अपनी गति से बजटिंग, निवेश और वित्तीय योजना सीखें।",
+                feature3_title: "स्मार्ट बचत",
+                feature3_desc: "उच्च रिटर्न के साथ स्वचालित बचत योजनाएं। लक्ष्य निर्धारित करें और हमारे स्मार्ट एल्गोरिदम के साथ अपने पैसे को बढ़ते हुए देखें।",
+                feature4_title: "व्यवसाय ऋण",
+                feature4_desc: "महिला उद्यमियों के लिए त्वरित अनुमोदन ऋण। कम ब्याज दरें और लचीली चुकौती विकल्प।",
+                feature5_title: "निवेश",
+                feature5_desc: "जोखिम मूल्यांकन के साथ मार्गदर्शित निवेश विकल्प। ₹500 से शुरू करें और अपना पोर्टफोलियो बनाएं।",
+                stat_complete: "पूर्ण",
+                stat_languages: "भाषाएँ",
+                stat_lessons: "पाठ",
+                stat_completion: "पूर्णता",
+                stat_returns: "रिटर्न",
+                stat_avg_savings: "औसत बचत",
+                stat_max_loan: "अधिकतम ऋण",
+                stat_interest: "ब्याज",
+                stat_avg_returns: "औसत रिटर्न",
+                stat_min_invest: "न्यूनतम निवेश",
+                quick_actions: "त्वरित कार्य",
+                action_save: "पैसे बचाएं",
+                action_invest: "अभी निवेश करें",
+                action_loan: "लोन के लिए आवेदन करें",
+                action_learn: "वित्त सीखें",
+                goals_title: "आपके वित्तीय लक्ष्य",
+                goal1: "आपातकालीन फंड",
+                goal2: "व्यवसाय शुरुआत",
+                goal3: "बच्चों की शिक्षा",
+                saved: "बचत हुई:",
+                speaker_instruction: "पेज सामग्री सुनने के लिए क्लिक करें। पढ़ नहीं सकने वालों के लिए आदर्श।",
+                option_summary: "पेज सारांश पढ़ें",
+                option_section: "वर्तमान सेक्शन पढ़ें",
+                option_all: "सभी कंटेंट पढ़ें",
+                speed_label: "गति:",
+                status_reading: "कंटेंट पढ़ा जा रहा है...",
+                status_stopped: "रुक गया",
+                footer_contact: "संपर्क करें",
+                footer_helpline: "महिला हेल्पलाइन: 1800-XXX-XXXX",
+                footer_email: "ईमेल: support@streeshakti.money",
+                footer_languages: "उपलब्ध भाषाएं",
+                footer_safety: "सुरक्षा पहले",
+                footer_safety_tip: "कभी भी अपना पिन या OTP किसी के साथ साझा न करें",
+                btn_safety_tips: "सुरक्षा युक्तियाँ",
+                footer_copyright: "© 2024 स्त्रीशक्ति मनी। महिलाओं को वित्तीय रूप से सशक्त बनाना।"
+            },
+            te: {
+                app_name: "స్త్రీశక్తి మనీ",
+                welcome: "స్వాగతం!",
+                nav_home: "హోమ్",
+                nav_savings: "చదువులు",
+                nav_learn: "నేర్చుకోండి",
+                nav_business: "వ్యాపారం",
+                nav_safety: "భద్రత",
+                hero_title: "మీ ఆర్థిక స్వాతంత్ర్యం, మీ భాషలో",
+                hero_subtitle: "హిందీ, తమిళం, తెలుగు మరియు ఇంగ్లీష్లో మహిళలకు అనుగుణంగా బ్యాంకింగ్, పెట్టుబడులు, రుణాలు మరియు ఆర్థిక విద్య",
+                btn_listen: "ఈ విభాగాన్ని వినండి",
+                btn_listen_all: "అన్ని లక్షణాలను వినండి",
+                btn_get_started: "ఉచితంగా ప్రారంభించండి",
+                btn_watch_demo: "డెమో చూడండి",
+                features_title: "మేము మిమ్మల్ని ఎలా శక్తివంతం చేస్తాము",
+                feature1_title: "వినియోగదారు వివరాలు & ప్రొఫైల్",
+                feature1_desc: "బహుభాషా మద్దతుతో సురక్షిత ప్రొఫైల్ నిర్వహణ. మీకు నచ్చిన భాషలో మీ సమాచారాన్ని నవీకరించండి.",
+                feature2_title: "ఆర్థిక అభ్యాసం",
+                feature2_desc: "ప్రాంతీయ భాషల్లో ఇంటరాక్టివ్ కోర్సులు. మీ వేగంతో బడ్జెట్, పెట్టుబడి మరియు ఆర్థిక ప్రణాళికను నేర్చుకోండి.",
+                feature3_title: "స్మార్ట్ సేవింగ్స్",
+                feature3_desc: "అధిక రాబడితో ఆటోమేటెడ్ పొదుపు ప్రణాళికలు. లక్ష్యాలను సెట్ చేసుకోండి మరియు మా స్మార్ట్ అల్గారిథమ్లతో మీ డబ్బు పెరగడాన్ని చూడండి.",
+                feature4_title: "వ్యాపార రుణాలు",
+                feature4_desc: "మహిళా వ్యవస్థాపకులకు త్వరిత ఆమోదం రుణాలు. తక్కువ వడ్డీ రేట్లు మరియు వశ్యతగల తిరిగి చెల్లింపు ఎంపికలు.",
+                feature5_title: "పెట్టుబడి",
+                feature5_desc: "రిస్క్ అసెస్‌మెంట్‌తో గైడెడ్ పెట్టుబడి ఎంపికలు. ₹500 తో ప్రారంభించండి మరియు మీ పోర్ట్‌ఫోలియోను నిర్మించండి.",
+                stat_complete: "పూర్తి",
+                stat_languages: "భాషలు",
+                stat_lessons: "పాఠాలు",
+                stat_completion: "పూర్తి",
+                stat_returns: "రాబడి",
+                stat_avg_savings: "సగటు పొదుపు",
+                stat_max_loan: "గరిష్ట రుణం",
+                stat_interest: "వడ్డీ",
+                stat_avg_returns: "సగటు రాబడి",
+                stat_min_invest: "కనీస పెట్టుబడి",
+                quick_actions: "త్వరిత చర్యలు",
+                action_save: "డబ్బు సేవ్ చేయండి",
+                action_invest: "ఇప్పుడే పెట్టుబడి పెట్టండి",
+                action_loan: "లోన్ కోసం దరఖాస్తు చేసుకోండి",
+                action_learn: "ఫైనాన్స్ నేర్చుకోండి",
+                goals_title: "మీ ఆర్థిక లక్ష్యాలు",
+                goal1: "అత్యవసర నిధి",
+                goal2: "వ్యాపార ప్రారంభం",
+                goal3: "పిల్లల విద్య",
+                saved: "సేవ్ చేయబడింది:",
+                speaker_instruction: "పేజీ కంటెంట్ వినడానికి క్లిక్ చేయండి. చదవలేని వారికి ఖచ్చితంగా.",
+                option_summary: "పేజీ సారాంశం చదవండి",
+                option_section: "ప్రస్తుత విభాగం చదవండి",
+                option_all: "అన్ని కంటెంట్‌ను చదవండి",
+                speed_label: "వేగం:",
+                status_reading: "కంటెంట్ చదవబడుతోంది...",
+                status_stopped: "ఆపబడింది",
+                footer_contact: "మమ్మల్ని సంప్రదించండి",
+                footer_helpline: "మహిళల హెల్ప్లైన్: 1800-XXX-XXXX",
+                footer_email: "ఇమెయిల్: support@streeshakti.money",
+                footer_languages: "అందుబాటులో ఉన్న భాషలు",
+                footer_safety: "సురక్ష మొదట",
+                footer_safety_tip: "మీ PIN లేదా OTP ని ఎవరితోనూ షేర్ చేయకండి",
+                btn_safety_tips: "సురక్ష చిట్కాలు",
+                footer_copyright: "© 2024 స్త్రీశక్తి మనీ. మహిళలను ఆర్థికంగా శక్తివంతం చేస్తోంది."
+            }
+        };
+
+        // Text-to-Speech Content
+        const ttsContent = {
+            en: {
+                summary: "Welcome to StreeShakti Money. Your financial freedom in your language. We provide banking, investments, loans and financial education tailored for women in multiple languages. Our features include user profile management, financial learning courses, smart savings plans, business loans, and investment guidance. All designed to empower women financially.",
+                action_save: "Save money option. Start saving for your future goals.",
+                action_invest: "Invest now option. Grow your money with smart investments.",
+                action_loan: "Apply for loan option. Get business loans for women entrepreneurs.",
+                action_learn: "Learn finance option. Educational resources in your language."
+            },
+            hi: {
+                summary: "स्त्रीशक्ति मनी में आपका स्वागत है। आपकी भाषा में आपकी वित्तीय स्वतंत्रता। हम कई भाषाओं में महिलाओं के लिए बैंकिंग, निवेश, ऋण और वित्तीय शिक्षा प्रदान करते हैं। हमारी विशेषताओं में उपयोगकर्ता प्रोफ़ाइल प्रबंधन, वित्तीय शिक्षा पाठ्यक्रम, स्मार्ट बचत योजनाएं, व्यवसाय ऋण और निवेश मार्गदर्शन शामिल हैं। सभी महिलाओं को वित्तीय रूप से सशक्त बनाने के लिए डिज़ाइन किए गए हैं।",
+                action_save: "पैसे बचाएं विकल्प। अपने भविष्य के लक्ष्यों के लिए बचत शुरू करें।",
+                action_invest: "अभी निवेश करें विकल्प। स्मार्ट निवेश के साथ अपने पैसे को बढ़ाएं।",
+                action_loan: "लोन के लिए आवेदन करें विकल्प। महिला उद्यमियों के लिए व्यवसाय ऋण प्राप्त करें।",
+                action_learn: "वित्त सीखें विकल्प। आपकी भाषा में शैक्षिक संसाधन।"
+            },
+            te: {
+                summary: "స్త్రీశక్తి మనీకి స్వాగతం. మీ భాషలో మీ ఆర్థిక స్వాతంత్ర్యం. మేము బహుళ భాషల్లో మహిళల కోసం బ్యాంకింగ్, పెట్టుబడులు, రుణాలు మరియు ఆర్థిక విద్యను అందిస్తాము. మా లక్షణాలలో యూజర్ ప్రొఫైల్ మేనేజ్మెంట్, ఆర్థిక అభ్యాస కోర్సులు, స్మార్ట్ పొదుపు ప్రణాళికలు, వ్యాపార రుణాలు మరియు పెట్టుబడి మార్గదర్శకత్వం ఉన్నాయి. మహిళలను ఆర్థికంగా శక్తివంతం చేయడానికి రూపొందించబడింది.",
+                action_save: "డబ్బు సేవ్ చేయండి ఎంపిక. మీ భవిష్యత్తు లక్ష్యాల కోసం పొదుపు ప్రారంభించండి.",
+                action_invest: "ఇప్పుడే పెట్టుబడి పెట్టండి ఎంపిక. స్మార్ట్ పెట్టుబడులతో మీ డబ్బును పెంచుకోండి.",
+                action_loan: "లోన్ కోసం దరఖాస్తు చేయండి ఎంపిక. మహిళా వ్యవస్థాపకుల కోసం వ్యాపార రుణాలు పొందండి.",
+                action_learn: "ఫైనాన్స్ నేర్చుకోండి ఎంపిక. మీ భాషలో విద్యా వనరులు."
+            }
+        };
+
+        // Current language and speech settings
+        let currentLang = 'en';
+        let speechSpeed = 1.0;
+        let isSpeaking = false;
+        let currentUtterance = null;
+
+        // Language switcher functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language buttons
+            const langButtons = document.querySelectorAll('.lang-btn');
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    changeLanguage(lang);
+                    
+                    // Update active button
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Stop speech when changing language
+                    stopSpeech();
+                });
+            });
+            
+            // Action buttons
+            const actionButtons = document.querySelectorAll('.action-btn');
+            actionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.getAttribute('data-action');
+                    handleAction(action);
+                });
+            });
+            
+            // Close speaker panel when clicking outside
+            document.addEventListener('click', function(event) {
+                const speakerPanel = document.getElementById('speakerPanel');
+                const speakerBtn = document.getElementById('mainSpeakerBtn');
+                
+                if (!speakerPanel.contains(event.target) && !speakerBtn.contains(event.target)) {
+                    speakerPanel.classList.remove('active');
+                    speakerBtn.classList.remove('active');
+                }
+            });
+            
+            // Initialize with English
+            changeLanguage('en');
+            
+            // Initialize speech synthesis
+            if (!('speechSynthesis' in window)) {
+                console.warn('Text-to-speech not supported in this browser');
+            }
+        });
+
+        // Change language function
+        function changeLanguage(lang) {
+            currentLang = lang;
+            const translation = translations[lang];
+            
+            // Update all elements with data-key attribute
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translation[key]) {
+                    element.textContent = translation[key];
+                }
+            });
+            
+            // Update document title
+            document.title = translation['app_name'] + ' - Financial Empowerment for Women';
+        }
+
+        // Handle action buttons
+        function handleAction(action) {
+            const messages = {
+                en: {
+                    save: "Opening savings page...",
+                    invest: "Redirecting to investments...",
+                    loan: "Starting loan application...",
+                    learn: "Loading financial lessons..."
+                },
+                hi: {
+                    save: "बचत पृष्ठ खोल रहे हैं...",
+                    invest: "निवेश पर रीडायरेक्ट कर रहे हैं...",
+                    loan: "लोन आवेदन शुरू कर रहे हैं...",
+                    learn: "वित्तीय पाठ लोड कर रहे हैं..."
+                },
+                te: {
+                    save: "సేవింగ్స్ పేజీ తెరవడం...",
+                    invest: "పెట్టుబడులకు రీడైరెక్ట్ చేస్తోంది...",
+                    loan: "లోన్ అప్లికేషన్ ప్రారంభిస్తోంది...",
+                    learn: "ఆర్థిక పాఠాలు లోడ్ చేస్తోంది..."
+                }
+            };
+            
+            alert(messages[currentLang][action]);
+        }
+
+        // Toggle speaker panel
+        function toggleSpeakerPanel() {
+            const speakerPanel = document.getElementById('speakerPanel');
+            const speakerBtn = document.getElementById('mainSpeakerBtn');
+            
+            speakerPanel.classList.toggle('active');
+            speakerBtn.classList.toggle('active');
+            
+            if (speakerPanel.classList.contains('active')) {
+                speakerBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                speakerBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        }
+
+        // Read page summary
+        function readPageSummary() {
+            const content = ttsContent[currentLang].summary;
+            speakText(content);
+        }
+
+        // Read current section
+        function readCurrentSection() {
+            const sections = ['home', 'features', 'actions'];
+            let currentSection = null;
+            
+            // Find which section is currently visible
+            for (let sectionId of sections) {
+                const section = document.getElementById(sectionId);
+                if (section && isElementInViewport(section)) {
+                    currentSection = section;
+                    break;
+                }
+            }
+            
+            if (currentSection) {
+                const text = extractTextFromElement(currentSection);
+                speakText(text);
+            } else {
+                readPageSummary();
+            }
+        }
+
+        // Read all content
+        function readAllContent() {
+            const sections = ['home', 'features', 'actions', 'footer'];
+            let allText = '';
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    allText += extractTextFromElement(section) + '. ';
+                }
+            });
+            
+            speakText(allText);
+        }
+
+        // Read a specific section
+        function readSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const text = extractTextFromElement(section);
+                speakText(text);
+            }
+        }
+
+        // Read feature card
+        function readFeatureCard(cardElement) {
+            const card = cardElement.closest('.feature-card');
+            const title = card.querySelector('h3').textContent;
+            const desc = card.querySelector('p').textContent;
+            const stats = card.querySelectorAll('.stat-item');
+            let statsText = '';
+            
+            stats.forEach(stat => {
+                const value = stat.querySelector('.stat-value').textContent;
+                const label = stat.querySelector('.stat-label').textContent;
+                statsText += `${value} ${label}. `;
+            });
+            
+            const text = ${title}. ${desc}. ${statsText};
+            speakText(text);
+        }
+
+        // Read action button
+        function readAction(buttonElement) {
+            const actionText = buttonElement.querySelector('.action-text').textContent;
+            const actionKey = buttonElement.getAttribute('data-action');
+            const description = ttsContent[currentLang][action_${actionKey}];
+            
+            const text = ${actionText}. ${description};
+            speakText(text);
+        }
+
+        // Extract text from HTML element
+        function extractTextFromElement(element) {
+            // Clone the element to avoid modifying the original
+            const clone = element.cloneNode(true);
+            
+            // Remove buttons and interactive elements
+            clone.querySelectorAll('button, .btn-primary, .btn-secondary, .listen-btn').forEach(el => el.remove());
+            
+            // Extract text content
+            return clone.textContent.replace(/\s+/g, ' ').trim();
+        }
+
+        // Check if element is in viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Main text-to-speech function
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Text-to-speech is not supported in your browser. Please try Chrome or Edge.');
+                return;
+            }
+            
+            // Stop any ongoing speech
+            stopSpeech();
+            
+            // Update status
+            updateSpeechStatus(translations[currentLang].status_reading);
+            
+            // Create utterance
+            const utterance = new SpeechSynthesisUtterance(text);
+            
+            // Set properties
+            utterance.lang = getLanguageCode(currentLang);
+            utterance.rate = speechSpeed;
+            utterance.pitch = 1;
+            utterance.volume = 1;
+            
+            // Try to find appropriate voice
+            const voices = speechSynthesis.getVoices();
+            const languageCode = getLanguageCode(currentLang);
+            
+            if (voices.length > 0) {
+                // Find voices for current language
+                const languageVoices = voices.filter(voice => voice.lang.startsWith(languageCode));
+                
+                // Prefer female voices
+                const femaleVoices = languageVoices.filter(voice => 
+                    voice.name.toLowerCase().includes('female') || 
+                    voice.name.toLowerCase().includes('woman')
+                );
+                
+                if (femaleVoices.length > 0) {
+                    utterance.voice = femaleVoices[0];
+                } else if (languageVoices.length > 0) {
+                    utterance.voice = languageVoices[0];
+                }
+            }
+            
+            // Event handlers
+            utterance.onstart = function() {
+                isSpeaking = true;
+                document.getElementById('mainSpeakerBtn').classList.add('active');
+                document.getElementById('mainSpeakerBtn').innerHTML = '<i class="fas fa-volume-up"></i>';
+            };
+            
+            utterance.onend = function() {
+                stopSpeech();
+            };
+            
+            utterance.onerror = function(event) {
+                console.error('Speech synthesis error:', event);
+                stopSpeech();
+                alert('Error playing audio. Please try again.');
+            };
+            
+            // Store current utterance
+            currentUtterance = utterance;
+            
+            // Start speaking
+            speechSynthesis.speak(utterance);
+        }
+
+        // Stop speech
+        function stopSpeech() {
+            if (isSpeaking) {
+                speechSynthesis.cancel();
+            }
+            
+            isSpeaking = false;
+            currentUtterance = null;
+            document.getElementById('mainSpeakerBtn').classList.remove('active');
+            document.getElementById('mainSpeakerBtn').innerHTML = '<i class="fas fa-volume-up"></i>';
+            document.getElementById('speakerPanel').classList.remove('active');
+            
+            updateSpeechStatus(translations[currentLang].status_stopped);
+            
+            // Hide status after delay
+            setTimeout(() => {
+                const status = document.getElementById('speechStatus');
+                if (status.classList.contains('active')) {
+                    status.classList.remove('active');
+                }
+            }, 2000);
+        }
+
+        // Update speech status
+        function updateSpeechStatus(text) {
+            const status = document.getElementById('speechStatus');
+            status.textContent = text;
+            status.classList.add('active');
+        }
+
+        // Set speech speed
+        function setSpeechSpeed(speed) {
+            speechSpeed = speed;
+            
+            // Update UI
+            document.querySelectorAll('.speed-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseFloat(btn.getAttribute('data-speed')) === speed) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update current utterance if speaking
+            if (isSpeaking && currentUtterance) {
+                currentUtterance.rate = speed;
+                speechSynthesis.cancel();
+                speechSynthesis.speak(currentUtterance);
+            }
+        }
+
+        // Get language code for speech synthesis
+        function getLanguageCode(lang) {
+            const codes = {
+                en: 'en-IN',
+                hi: 'hi-IN',
+                te: 'te-IN'
+            };
+            return codes[lang] || 'en-IN';
+        }
+
+        // Initialize voices when they are loaded
+        if ('speechSynthesis' in window) {
+            speechSynthesis.onvoiceschanged = function() {
+                // Voices are now loaded
+            };
+        }
+    </script>
+</body>
+</html>
